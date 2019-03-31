@@ -116,5 +116,5 @@ suicide <- suicide[1,]
 dataset6 <- dplyr::tibble(year = year,
                          suicides = suicide$`Deaths in Greece during 2016, by age and cause`)
 
-# ----
+# ----total data
 total <- rbind(dataset, dataset1, dataset2, dataset3, dataset4, dataset5, dataset6)
