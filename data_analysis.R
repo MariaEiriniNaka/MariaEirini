@@ -118,25 +118,24 @@ dataset6 <- dplyr::tibble(year = year,
                           suicides = suicide$`Deaths in Greece during 2016, by age and cause`)
 
 # ---- Total Data
-total1 <- rbind(dataset, dataset1, dataset2, dataset3, dataset4, dataset5, dataset6)
+total <- rbind(dataset, dataset1, dataset2, dataset3, dataset4, dataset5, dataset6)
 
 interest <- interest_over_time
 interest$Year <- format(interest$date, "%Y")
 interest1 = subset(interest, select = -c(date, keyword, geo, gprop, category))
 interest1 <-as.numeric(interest1$hits)
 agg = aggregate(interest1,
-                  + by = list(interest$Year),
-                  + FUN = mean)
+                   by = list(interest$Year),
+                   FUN = mean)
+
 totald <- as.numeric(total$suicides)
 
 group_a <- agg$x
 group_b <- totald
 df_wide <- data.frame(group_a, group_b)
 df_long <- tidyr::gather(
-  + df_wide, group_a, group_b,
-  + key = group, value = score)
+   df_wide, group_a, group_b,
+   key = group, value = score)
 knitr::kable(head(df_long))
 knitr::kable(head(df_wide))
 cor.test(x = df_wide$group_a, y = df_wide$group_b)
-
-
