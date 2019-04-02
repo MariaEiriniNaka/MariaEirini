@@ -1,7 +1,5 @@
-## ---- Install Package
-install.packages("gtrendsR")
-
 ## ---- Google Trends Query
+library(gtrendsR)
 trends <- gtrendsR::gtrends(
   keyword = c("αυτοκτονία"),
   geo = c("GR"),
