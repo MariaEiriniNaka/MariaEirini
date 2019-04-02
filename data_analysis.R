@@ -120,16 +120,23 @@ dataset6 <- dplyr::tibble(year = year,
 # ---- Total Data
 total <- rbind(dataset, dataset1, dataset2, dataset3, dataset4, dataset5, dataset6)
 
+# ---- Keep Years And Hits
 interest <- interest_over_time
 interest$Year <- format(interest$date, "%Y")
 interest1 = subset(interest, select = -c(date, keyword, geo, gprop, category))
+
+# ---- Convert Hits To Numeric
 interest1 <-as.numeric(interest1$hits)
+
+# ---- Aggregate Function
 agg = aggregate(interest1,
                    by = list(interest$Year),
                    FUN = mean)
 
+# ---- Convert Suicides To Numeric
 totald <- as.numeric(total$suicides)
 
+# ---- Analysis
 group_a <- agg$x
 group_b <- totald
 df_wide <- data.frame(group_a, group_b)

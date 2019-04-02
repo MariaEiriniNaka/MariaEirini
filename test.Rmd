@@ -96,3 +96,28 @@ knitr::read_chunk('data_analysis.R')
 ```{r Extract Relevant Data 2016}
 
 ```
+
+```{r Total Data}
+
+```
+
+```{r Keep Years And Hits}
+
+```
+
+```{r Convert Hits To Numeric}
+
+```
+
+```{r Aggregate Function}
+
+```
+
+```{r Convert Suicides To Numeric}
+
+```
+
+```{r Analysis}
+
+```
+
