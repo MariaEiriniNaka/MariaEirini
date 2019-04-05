@@ -1,12 +1,13 @@
 ## ---- Google Trends Query
 library(gtrendsR)
 trends <- gtrendsR::gtrends(
-  keyword = c("αυτοκτονία"),
+  keyword = c("Ξ±Ο…Ο„ΞΏΞΊΟ„ΞΏΞ½Ξ―Ξ±"),
   geo = c("GR"),
   time = "2010-01-01 2016-12-31")
 
 ## ---- Get Interest Over Time 
 interest_over_time <- trends$interest_over_time
+
 
 ## ---- Save Data
 readr::write_csv(
@@ -29,7 +30,7 @@ suicide <- dplyr::filter(cod, stringr::str_detect(cod$...2, "Suicide"))
 suicide <- suicide[1,]
 # add to new data frame with year 2010
 dataset <- dplyr::tibble(year = year,
-                          suicides = suicide$`Deaths in Greece during 2010, by age and cause`)
+                         suicides = suicide$`Deaths in Greece during 2010, by age and cause`)
 
 # ---- Import Data 2011
 year <- 2011
@@ -128,8 +129,8 @@ interest1 <-as.numeric(interest1$hits)
 
 # ---- Aggregate Function
 agg = aggregate(interest1,
-                   by = list(interest$Year),
-                   FUN = mean)
+                by = list(interest$Year),
+                FUN = mean)
 
 # ---- Convert Suicides To Numeric
 totald <- as.numeric(total$suicides)
@@ -139,8 +140,8 @@ group_a <- agg$x
 group_b <- totald
 df_wide <- data.frame(group_a, group_b)
 df_long <- tidyr::gather(
-   df_wide, group_a, group_b,
-   key = group, value = score)
-knitr::kable(head(df_long))
-knitr::kable(head(df_wide))
+  df_wide, group_a, group_b,
+  key = group, value = score)
+knitr::kable(df_long)
+knitr::kable(df_wide)
 cor.test(x = df_wide$group_a, y = df_wide$group_b)
