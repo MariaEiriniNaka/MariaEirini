@@ -1,0 +1,110 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r cache=FALSE}
+knitr::read_chunk('final.R')
+```
+
+
+```{r Google Trends Query}
+
+```
+
+
+```{r Get Interest Over Time}
+
+```
+
+```{r Save Data}
+
+```
+
+```{r Download Data}
+
+```
+
+```{r Import Data 2010}
+
+```
+
+```{r Extract Relevant Data 2010}
+
+```
+
+```{r Import Data 2011}
+
+```
+
+```{r Extract Relevant Data 2011}
+
+```
+
+```{r Import Data 2012}
+
+```
+
+```{r Extract Relevant Data 2012}
+
+```
+
+```{r Import Data 2013}
+
+```
+
+```{r Extract Relevant Data 2013}
+
+```
+
+```{r Import Data 2014}
+
+```
+
+```{r Extract Relevant Data 2014}
+
+```
+
+```{r Import Data 2015}
+
+```
+
+```{r Extract Relevant Data 2015}
+
+```
+
+```{r Import Data 2016}
+
+```
+
+```{r Extract Relevant Data 2016}
+
+```
+
+```{r Total Data}
+
+```
+
+```{r Convert Hits To Numeric}
+
+```
+
+```{r Aggregate Function}
+
+```
+
+```{r Convert Suicides To Numeric}
+
+```
+
+```{r Analysis}
+
+```
+
+```{r Plot}
+
+```
+
+## References
