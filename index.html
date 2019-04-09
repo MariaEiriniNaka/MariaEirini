@@ -800,7 +800,7 @@ hljs.initHighlightingOnLoad();
 
 <p>Significant associations between suicide death and a set of suicide-related search terms (Yang, Tsai, Huang, &amp; Peng, 2011)</p>
 
-<p>In US states with higher suicide rates, there were higher volumes of searches of terms associated with suicide (Cunn III &amp; Lester, 2013)</p>
+<p>In US states with higher suicide rates, there were more searches of terms associated with suicide (Cunn III &amp; Lester, 2013)</p>
 
 <p>Hypothesis: Google search for suicide correlates positevely with the actual number of suicides</p>
 
@@ -824,13 +824,43 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Proposed analysis</h3>
+<h3>Method</h3>
 <div class="slideContent" >
-<p>Analysis in R</p>
+<p>Analyse in R</p>
+
+<p>Keep only years and hits from Google trends </p>
+
+<p>Mean of Gooogle searches per year</p>
 
 <p>Pearson correlation</p>
 
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Results</h3>
+<div class="slideContent" >
 <p>Investigation of the relationship between Google searches for suicide and actual suicide rate</p>
+
+<pre><code class="r">a &lt;- 1:30; b &lt;- 21:50
+result &lt;- cor.test(x = a, y = b)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Plot</h3>
+<div class="slideContent" >
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Discussion</h3>
+<div class="slideContent" >
+<p>why a signifficant or not result
+why ggogle trends work or not</p>
 
 </div>
 
