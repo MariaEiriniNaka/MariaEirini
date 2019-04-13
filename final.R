@@ -134,18 +134,18 @@ agg = aggregate(interest1,
 totald <- as.numeric(total$suicides)
 
 # ---- Analysis
-group_a <- agg$x
-group_b <- totald
-df_wide <- data.frame(group_a, group_b)
+Hits <- agg$x
+Suicides <- totald
+df_wide <- data.frame(Hits, Suicides)
 df_long <- tidyr::gather(
-  df_wide, group_a, group_b,
+  df_wide, Hits, Suicides,
   key = group, value = score)
 knitr::kable(df_long)
 knitr::kable(df_wide)
-cor.test(x = df_wide$group_a, y = df_wide$group_b)
+cor.test(x = df_wide$Hits, y = df_wide$Suicides)
 
 # ---- Plot
 library(ggplot2)
-ggplot(data = df_wide, aes(x = group_a, y = group_b)) + 
+ggplot(data = df_wide, aes(x = Hits, y = Suicides)) + 
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
